@@ -1,0 +1,231 @@
+{
+    "actions": [],
+    "allow_rename": 0,
+    "autoname": "naming_series:",
+    "creation": "2026-03-12 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "naming_series",
+        "status",
+        "count_date",
+        "warehouse",
+        "col0",
+        "company",
+        "count_type",
+        "counted_by",
+        "reviewed_by",
+        "notes_section",
+        "description",
+        "items_section",
+        "items",
+        "summary_section",
+        "total_items",
+        "items_counted",
+        "items_with_variance",
+        "total_variance_value",
+        "recount_required",
+        "amendment_info_section",
+        "reconciliation_ref",
+        "submitted_at"
+    ],
+    "fields": [
+        {
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "label": "Series",
+            "options": "IC-.YYYY.-.#####",
+            "reqd": 1
+        },
+        {
+            "default": "Draft",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Draft\nIn Progress\nPending Review\nApproved\nReconciled\nCancelled",
+            "reqd": 1
+        },
+        {
+            "default": "Today",
+            "fieldname": "count_date",
+            "fieldtype": "Date",
+            "label": "Count Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "warehouse",
+            "fieldtype": "Link",
+            "label": "Warehouse",
+            "options": "Warehouse",
+            "reqd": 1
+        },
+        {
+            "fieldname": "col0",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "company",
+            "fieldtype": "Link",
+            "label": "Company",
+            "options": "Company",
+            "reqd": 1
+        },
+        {
+            "default": "Full Count",
+            "fieldname": "count_type",
+            "fieldtype": "Select",
+            "label": "Count Type",
+            "options": "Full Count\nCycle Count\nSpot Check\nABC - A Items\nABC - B Items\nABC - C Items\nZero-Stock Verification"
+        },
+        {
+            "fieldname": "counted_by",
+            "fieldtype": "Link",
+            "label": "Counted By",
+            "options": "User"
+        },
+        {
+            "fieldname": "reviewed_by",
+            "fieldtype": "Link",
+            "label": "Reviewed By",
+            "options": "User"
+        },
+        {
+            "fieldname": "notes_section",
+            "fieldtype": "Section Break",
+            "label": "Notes"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Small Text",
+            "label": "Count Description / Scope"
+        },
+        {
+            "fieldname": "items_section",
+            "fieldtype": "Section Break",
+            "label": "Items to Count"
+        },
+        {
+            "fieldname": "items",
+            "fieldtype": "Table",
+            "label": "Items",
+            "options": "Inventory Count Item"
+        },
+        {
+            "fieldname": "summary_section",
+            "fieldtype": "Section Break",
+            "label": "Count Summary",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "total_items",
+            "fieldtype": "Int",
+            "label": "Total Items",
+            "read_only": 1
+        },
+        {
+            "fieldname": "items_counted",
+            "fieldtype": "Int",
+            "label": "Items Counted",
+            "read_only": 1
+        },
+        {
+            "fieldname": "items_with_variance",
+            "fieldtype": "Int",
+            "label": "Items with Variance",
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_variance_value",
+            "fieldtype": "Currency",
+            "label": "Total Variance Value (USD)",
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "recount_required",
+            "fieldtype": "Check",
+            "label": "Re-Count Required",
+            "read_only": 1
+        },
+        {
+            "fieldname": "amendment_info_section",
+            "fieldtype": "Section Break",
+            "label": "Reconciliation",
+            "collapsible": 1
+        },
+        {
+            "fieldname": "reconciliation_ref",
+            "fieldtype": "Link",
+            "label": "Stock Reconciliation",
+            "options": "Stock Reconciliation",
+            "read_only": 1,
+            "description": "Auto-created on Submit"
+        },
+        {
+            "fieldname": "submitted_at",
+            "fieldtype": "Datetime",
+            "label": "Submitted At",
+            "read_only": 1
+        }
+    ],
+    "icon": "fa fa-list-ol",
+    "is_submittable": 1,
+    "links": [
+        {
+            "group": "Inventory",
+            "link_doctype": "Stock Reconciliation",
+            "link_fieldname": "inventory_count_ref"
+        }
+    ],
+    "modified": "2026-03-12 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Lexington Inventory",
+    "name": "Inventory Count",
+    "naming_rule": "By \"Naming Series\" field",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "amend": 1,
+            "cancel": 1,
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Stock Manager",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        },
+        {
+            "amend": 0,
+            "cancel": 0,
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Stock User",
+            "share": 0,
+            "submit": 0,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [
+        {"color": "Yellow", "title": "Draft"},
+        {"color": "Orange", "title": "In Progress"},
+        {"color": "Blue",   "title": "Pending Review"},
+        {"color": "Green",  "title": "Approved"},
+        {"color": "Purple", "title": "Reconciled"},
+        {"color": "Red",    "title": "Cancelled"}
+    ],
+    "title_field": "warehouse",
+    "track_changes": 1
+}

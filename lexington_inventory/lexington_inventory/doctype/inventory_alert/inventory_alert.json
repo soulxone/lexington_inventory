@@ -1,0 +1,178 @@
+{
+    "actions": [],
+    "allow_rename": 0,
+    "autoname": "naming_series:",
+    "creation": "2026-03-12 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "naming_series",
+        "status",
+        "alert_date",
+        "alert_type",
+        "col0",
+        "item_code",
+        "item_name",
+        "warehouse",
+        "qty_section",
+        "current_qty",
+        "reorder_level",
+        "reorder_qty",
+        "uom",
+        "action_section",
+        "action_taken",
+        "purchase_order",
+        "resolved_by",
+        "resolved_at",
+        "notes"
+    ],
+    "fields": [
+        {
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "label": "Series",
+            "options": "IA-.YYYY.-.#####",
+            "reqd": 1
+        },
+        {
+            "default": "Open",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Open\nPO Created\nResolved\nIgnored",
+            "reqd": 1
+        },
+        {
+            "default": "Today",
+            "fieldname": "alert_date",
+            "fieldtype": "Date",
+            "label": "Alert Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "alert_type",
+            "fieldtype": "Select",
+            "label": "Alert Type",
+            "options": "Low Stock\nZero Stock\nOverstock\nNearing Expiry\nNo Movement (90d+)",
+            "reqd": 1
+        },
+        {
+            "fieldname": "col0",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "item_code",
+            "fieldtype": "Link",
+            "label": "Item",
+            "options": "Item",
+            "reqd": 1
+        },
+        {
+            "fieldname": "item_name",
+            "fieldtype": "Data",
+            "label": "Item Name",
+            "fetch_from": "item_code.item_name",
+            "read_only": 1
+        },
+        {
+            "fieldname": "warehouse",
+            "fieldtype": "Link",
+            "label": "Warehouse",
+            "options": "Warehouse",
+            "reqd": 1
+        },
+        {
+            "fieldname": "qty_section",
+            "fieldtype": "Section Break",
+            "label": "Stock Quantities"
+        },
+        {
+            "fieldname": "current_qty",
+            "fieldtype": "Float",
+            "label": "Current Qty",
+            "read_only": 1
+        },
+        {
+            "fieldname": "reorder_level",
+            "fieldtype": "Float",
+            "label": "Reorder Level",
+            "read_only": 1
+        },
+        {
+            "fieldname": "reorder_qty",
+            "fieldtype": "Float",
+            "label": "Suggested Reorder Qty"
+        },
+        {
+            "fieldname": "uom",
+            "fieldtype": "Link",
+            "label": "UOM",
+            "options": "UOM",
+            "read_only": 1
+        },
+        {
+            "fieldname": "action_section",
+            "fieldtype": "Section Break",
+            "label": "Resolution"
+        },
+        {
+            "fieldname": "action_taken",
+            "fieldtype": "Select",
+            "label": "Action",
+            "options": "\nPO Created\nManual Reorder\nAdjusted Reorder Level\nIgnored — No Action"
+        },
+        {
+            "fieldname": "purchase_order",
+            "fieldtype": "Link",
+            "label": "Purchase Order",
+            "options": "Purchase Order"
+        },
+        {
+            "fieldname": "resolved_by",
+            "fieldtype": "Link",
+            "label": "Resolved By",
+            "options": "User"
+        },
+        {
+            "fieldname": "resolved_at",
+            "fieldtype": "Datetime",
+            "label": "Resolved At"
+        },
+        {
+            "fieldname": "notes",
+            "fieldtype": "Small Text",
+            "label": "Notes"
+        }
+    ],
+    "icon": "fa fa-bell",
+    "links": [],
+    "modified": "2026-03-12 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Lexington Inventory",
+    "name": "Inventory Alert",
+    "naming_rule": "By \"Naming Series\" field",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1, "delete": 1, "email": 1, "export": 1,
+            "print": 1, "read": 1, "report": 1,
+            "role": "Stock Manager", "share": 1, "write": 1
+        },
+        {
+            "create": 0, "delete": 0, "email": 1, "export": 1,
+            "print": 1, "read": 1, "report": 1,
+            "role": "Stock User", "share": 0, "write": 1
+        }
+    ],
+    "sort_field": "alert_date",
+    "sort_order": "DESC",
+    "states": [
+        {"color": "Red",    "title": "Open"},
+        {"color": "Blue",   "title": "PO Created"},
+        {"color": "Green",  "title": "Resolved"},
+        {"color": "Grey",   "title": "Ignored"}
+    ],
+    "title_field": "item_name",
+    "track_changes": 1
+}

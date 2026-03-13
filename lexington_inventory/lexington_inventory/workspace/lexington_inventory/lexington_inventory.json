@@ -1,0 +1,156 @@
+{
+    "doctype": "Workspace",
+    "name": "Lexington Inventory",
+    "title": "Lexington Inventory",
+    "module": "Lexington Inventory",
+    "public": 1,
+    "is_standard": 0,
+    "sequence_id": 8,
+    "icon": "fa fa-archive",
+    "charts": [],
+    "shortcuts": [
+        {
+            "color": "Red",
+            "label": "Open Alerts",
+            "link_to": "/app/inventory-alert?status=Open",
+            "type": "URL"
+        },
+        {
+            "color": "Blue",
+            "label": "New Count",
+            "link_to": "/app/inventory-count/new-inventory-count-1",
+            "type": "URL"
+        },
+        {
+            "color": "Green",
+            "label": "All Counts",
+            "link_to": "/app/inventory-count",
+            "type": "URL"
+        },
+        {
+            "color": "Orange",
+            "label": "Stock Report",
+            "link_to": "/app/query-report/Stock%20Balance",
+            "type": "URL"
+        },
+        {
+            "color": "Purple",
+            "label": "Settings",
+            "link_to": "/app/inventory-monitor-settings",
+            "type": "URL"
+        },
+        {
+            "color": "Grey",
+            "label": "Items",
+            "link_to": "/app/item",
+            "type": "URL"
+        }
+    ],
+    "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Inventory Monitor\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Stock Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Purchasing\",\"col\":4}}]",
+    "cards": [
+        {"label": "Inventory Monitor", "hidden": 0},
+        {"label": "Stock Management", "hidden": 0},
+        {"label": "Purchasing", "hidden": 0}
+    ],
+    "links": [
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Inventory Alert",
+            "link_to": "Inventory Alert",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Inventory Count",
+            "link_to": "Inventory Count",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Inventory Monitor Settings",
+            "link_to": "Inventory Monitor Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Item",
+            "link_to": "Item",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Warehouse",
+            "link_to": "Warehouse",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Stock Entry",
+            "link_to": "Stock Entry",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Stock Reconciliation",
+            "link_to": "Stock Reconciliation",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Purchase Order",
+            "link_to": "Purchase Order",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Purchase Receipt",
+            "link_to": "Purchase Receipt",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 1,
+            "label": "Stock Balance Report",
+            "link_to": "Stock Balance",
+            "link_type": "Report",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 1,
+            "label": "Stock Ledger",
+            "link_to": "Stock Ledger",
+            "link_type": "Report",
+            "onboard": 0,
+            "type": "Link"
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+{
+    "actions": [],
+    "allow_rename": 0,
+    "creation": "2026-03-12 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "warehouse_section",
+        "default_warehouse",
+        "company",
+        "col1",
+        "alert_email",
+        "from_email",
+        "alert_section",
+        "low_stock_threshold_pct",
+        "auto_create_purchase_orders",
+        "notify_on_zero_stock",
+        "notify_on_reorder_level",
+        "reorder_section",
+        "default_lead_time_days",
+        "default_reorder_multiplier",
+        "auto_submit_po",
+        "cycle_count_section",
+        "cycle_count_default_frequency",
+        "count_variance_threshold_pct",
+        "require_recount_on_variance",
+        "snapshot_section",
+        "last_snapshot_at",
+        "last_snapshot_items",
+        "last_alert_run_at",
+        "last_alert_status"
+    ],
+    "fields": [
+        {
+            "fieldname": "warehouse_section",
+            "fieldtype": "Section Break",
+            "label": "Warehouse & Company"
+        },
+        {
+            "fieldname": "default_warehouse",
+            "fieldtype": "Link",
+            "label": "Default Warehouse",
+            "options": "Warehouse",
+            "reqd": 1
+        },
+        {
+            "fieldname": "company",
+            "fieldtype": "Link",
+            "label": "Company",
+            "options": "Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "col1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "alert_email",
+            "fieldtype": "Data",
+            "label": "Alert Email (To)",
+            "options": "Email",
+            "description": "Email address to receive low-stock alerts"
+        },
+        {
+            "fieldname": "from_email",
+            "fieldtype": "Data",
+            "label": "From Email",
+            "options": "Email"
+        },
+        {
+            "fieldname": "alert_section",
+            "fieldtype": "Section Break",
+            "label": "Alert Settings"
+        },
+        {
+            "default": "20",
+            "fieldname": "low_stock_threshold_pct",
+            "fieldtype": "Float",
+            "label": "Low Stock Threshold (%)",
+            "description": "Alert when qty_on_hand < reorder_level + this % of reorder_level"
+        },
+        {
+            "default": "1",
+            "fieldname": "auto_create_purchase_orders",
+            "fieldtype": "Check",
+            "label": "Auto-Create Purchase Orders"
+        },
+        {
+            "default": "1",
+            "fieldname": "notify_on_zero_stock",
+            "fieldtype": "Check",
+            "label": "Alert on Zero Stock"
+        },
+        {
+            "default": "1",
+            "fieldname": "notify_on_reorder_level",
+            "fieldtype": "Check",
+            "label": "Alert at Reorder Level"
+        },
+        {
+            "fieldname": "reorder_section",
+            "fieldtype": "Section Break",
+            "label": "Reorder Defaults"
+        },
+        {
+            "default": "14",
+            "fieldname": "default_lead_time_days",
+            "fieldtype": "Int",
+            "label": "Default Lead Time (days)"
+        },
+        {
+            "default": "1.5",
+            "fieldname": "default_reorder_multiplier",
+            "fieldtype": "Float",
+            "label": "Reorder Qty Multiplier",
+            "description": "PO qty = reorder_qty × multiplier (safety stock buffer)"
+        },
+        {
+            "default": "0",
+            "fieldname": "auto_submit_po",
+            "fieldtype": "Check",
+            "label": "Auto-Submit Purchase Orders",
+            "description": "WARNING: submits POs without human review"
+        },
+        {
+            "fieldname": "cycle_count_section",
+            "fieldtype": "Section Break",
+            "label": "Cycle Count Defaults"
+        },
+        {
+            "default": "Monthly",
+            "fieldname": "cycle_count_default_frequency",
+            "fieldtype": "Select",
+            "label": "Default Count Frequency",
+            "options": "Weekly\nBi-Weekly\nMonthly\nQuarterly\nAnnually"
+        },
+        {
+            "default": "5",
+            "fieldname": "count_variance_threshold_pct",
+            "fieldtype": "Float",
+            "label": "Variance Threshold (%)",
+            "description": "Flag counts where variance > this % of expected qty"
+        },
+        {
+            "default": "1",
+            "fieldname": "require_recount_on_variance",
+            "fieldtype": "Check",
+            "label": "Require Re-Count on Variance"
+        },
+        {
+            "fieldname": "snapshot_section",
+            "fieldtype": "Section Break",
+            "label": "System Status"
+        },
+        {
+            "fieldname": "last_snapshot_at",
+            "fieldtype": "Datetime",
+            "label": "Last Snapshot At",
+            "read_only": 1
+        },
+        {
+            "fieldname": "last_snapshot_items",
+            "fieldtype": "Int",
+            "label": "Items in Last Snapshot",
+            "read_only": 1
+        },
+        {
+            "fieldname": "last_alert_run_at",
+            "fieldtype": "Datetime",
+            "label": "Last Alert Run At",
+            "read_only": 1
+        },
+        {
+            "fieldname": "last_alert_status",
+            "fieldtype": "Data",
+            "label": "Last Alert Status",
+            "read_only": 1
+        }
+    ],
+    "icon": "fa fa-sliders",
+    "issingle": 1,
+    "links": [],
+    "modified": "2026-03-12 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Lexington Inventory",
+    "name": "Inventory Monitor Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 0,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 0,
+            "role": "System Manager",
+            "share": 0,
+            "write": 1
+        },
+        {
+            "create": 0,
+            "delete": 0,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 0,
+            "role": "Stock Manager",
+            "share": 0,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

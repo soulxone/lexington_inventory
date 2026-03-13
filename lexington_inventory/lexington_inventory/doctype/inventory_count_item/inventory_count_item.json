@@ -1,0 +1,121 @@
+{
+    "actions": [],
+    "creation": "2026-03-12 00:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "item_code",
+        "item_name",
+        "uom",
+        "system_qty",
+        "counted_qty",
+        "variance_qty",
+        "variance_pct",
+        "variance_value",
+        "recount_flag",
+        "recount_qty",
+        "count_note",
+        "valuation_rate",
+        "bin_location"
+    ],
+    "fields": [
+        {
+            "fieldname": "item_code",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Item",
+            "options": "Item",
+            "reqd": 1
+        },
+        {
+            "fieldname": "item_name",
+            "fieldtype": "Data",
+            "label": "Item Name",
+            "fetch_from": "item_code.item_name",
+            "read_only": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "uom",
+            "fieldtype": "Link",
+            "label": "UOM",
+            "options": "UOM",
+            "fetch_from": "item_code.stock_uom",
+            "read_only": 1
+        },
+        {
+            "fieldname": "system_qty",
+            "fieldtype": "Float",
+            "label": "System Qty",
+            "read_only": 1,
+            "in_list_view": 1,
+            "description": "Current qty per ERPNext ledger"
+        },
+        {
+            "fieldname": "counted_qty",
+            "fieldtype": "Float",
+            "label": "Counted Qty",
+            "in_list_view": 1,
+            "reqd": 0
+        },
+        {
+            "fieldname": "variance_qty",
+            "fieldtype": "Float",
+            "label": "Variance",
+            "read_only": 1,
+            "in_list_view": 1,
+            "description": "counted_qty - system_qty"
+        },
+        {
+            "fieldname": "variance_pct",
+            "fieldtype": "Percent",
+            "label": "Variance %",
+            "read_only": 1
+        },
+        {
+            "fieldname": "variance_value",
+            "fieldtype": "Currency",
+            "label": "Variance Value",
+            "read_only": 1,
+            "description": "variance_qty × valuation_rate"
+        },
+        {
+            "default": "0",
+            "fieldname": "recount_flag",
+            "fieldtype": "Check",
+            "label": "Re-Count Required",
+            "read_only": 1
+        },
+        {
+            "fieldname": "recount_qty",
+            "fieldtype": "Float",
+            "label": "Re-Count Qty",
+            "depends_on": "recount_flag"
+        },
+        {
+            "fieldname": "count_note",
+            "fieldtype": "Small Text",
+            "label": "Count Note"
+        },
+        {
+            "fieldname": "valuation_rate",
+            "fieldtype": "Currency",
+            "label": "Valuation Rate",
+            "read_only": 1
+        },
+        {
+            "fieldname": "bin_location",
+            "fieldtype": "Data",
+            "label": "Bin / Location"
+        }
+    ],
+    "istable": 1,
+    "modified": "2026-03-12 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Lexington Inventory",
+    "name": "Inventory Count Item",
+    "owner": "Administrator",
+    "sort_field": "modified",
+    "sort_order": "DESC"
+}
