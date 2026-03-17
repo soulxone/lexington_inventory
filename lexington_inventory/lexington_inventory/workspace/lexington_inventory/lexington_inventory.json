@@ -46,13 +46,16 @@
             "type": "URL"
         }
     ],
-    "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"Inventory Monitor\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Stock Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Purchasing\",\"col\":4}}]",
-    "cards": [
-        {"label": "Inventory Monitor", "hidden": 0},
-        {"label": "Stock Management", "hidden": 0},
-        {"label": "Purchasing", "hidden": 0}
-    ],
     "links": [
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Inventory Monitor",
+            "link_to": "",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Card Break"
+        },
         {
             "hidden": 0,
             "is_query_report": 0,
@@ -79,6 +82,15 @@
             "link_type": "DocType",
             "onboard": 0,
             "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Stock Management",
+            "link_to": "",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Card Break"
         },
         {
             "hidden": 0,
@@ -118,24 +130,6 @@
         },
         {
             "hidden": 0,
-            "is_query_report": 0,
-            "label": "Purchase Order",
-            "link_to": "Purchase Order",
-            "link_type": "DocType",
-            "onboard": 0,
-            "type": "Link"
-        },
-        {
-            "hidden": 0,
-            "is_query_report": 0,
-            "label": "Purchase Receipt",
-            "link_to": "Purchase Receipt",
-            "link_type": "DocType",
-            "onboard": 0,
-            "type": "Link"
-        },
-        {
-            "hidden": 0,
             "is_query_report": 1,
             "label": "Stock Balance Report",
             "link_to": "Stock Balance",
@@ -149,6 +143,33 @@
             "label": "Stock Ledger",
             "link_to": "Stock Ledger",
             "link_type": "Report",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Purchasing",
+            "link_to": "",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Purchase Order",
+            "link_to": "Purchase Order",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Purchase Receipt",
+            "link_to": "Purchase Receipt",
+            "link_type": "DocType",
             "onboard": 0,
             "type": "Link"
         }
