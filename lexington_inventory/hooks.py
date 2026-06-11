@@ -5,6 +5,10 @@ app_description = "Real-time inventory monitoring, cycle counts, low-stock alert
 app_email = "admin@welchwyse.com"
 app_license = "MIT"
 
+# Custom Fields target Item/Purchase Order, doc_events hook Stock Entry &
+# Purchase Receipt, and permissions use ERPNext stock roles.
+required_apps = ["frappe", "erpnext"]
+
 # ── Document events ────────────────────────────────────────────────────────────
 doc_events = {
     # When a Stock Entry (Receipt/Transfer/Issue) is submitted, update alert thresholds
